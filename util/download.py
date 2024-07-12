@@ -1,3 +1,4 @@
+import json
 import os
 import urllib.request
 from tqdm import tqdm
@@ -30,3 +31,16 @@ def download_all(base, names, dir, label):
         furl = os.path.join(base, label, fn)
         fpath = os.path.join(dir, fn)
         download_file(furl, fpath)
+
+
+def download_and_load_file(file_path, url):
+    if not os.path.exists(file_path):
+        with urllib.request.urlopen(url) as response:
+            text_data = response.read().decode("utf-8")
+        with open(file_path, "w", encoding="utf-8") as f:
+            f.write(text_data)
+    else:
+        with open(file_path, "r", encoding="utf-8") as f:
+            text_data = f.read()
+
+    return text_data

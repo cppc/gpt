@@ -25,7 +25,7 @@ def main(gpt_config, input_prompt, model_size):
     token_ids = generate(
         model=gpt,
         idx=text_to_token_ids(input_prompt, tokenizer),
-        max_new_tokens=50,
+        max_new_tokens=15,
         context_size=gpt_config["context_length"],
         top_k=1,
         temperature=1.0
@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
     torch.manual_seed(123)
 
-    INPUT_PROMPT = "Why does the sky look blue?"
+    INPUT_PROMPT = "Every effort moves you"
 
     cfg, label = gpt2_config("small")
 
