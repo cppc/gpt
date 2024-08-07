@@ -22,4 +22,4 @@ class InstructionDataset(Dataset):
         return len(self.data)
 
 
-train_dataset = InstructionDataset(train)
+# train_dataset = InstructionDataset(train)
