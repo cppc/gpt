@@ -31,6 +31,7 @@ def train_model_simple(model, train_loader, val_loader, optimizer, device,
 
             if global_step % eval_freq == 0:
                 train_loss, val_loss = evaluate_model(
+                    calc_loss_batch,
                     model, train_loader, val_loader, device, eval_iter)
                 train_losses.append(train_loss)
                 val_losses.append(val_loss)

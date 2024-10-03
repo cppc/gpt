@@ -1,5 +1,3 @@
-import os
-
 from parameters.checkpoint import download_checkpoint, load_checkpoint
 
 allowed_labels = ("124M", "355M", "774M", "1558M")
